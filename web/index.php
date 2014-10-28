@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
-    $_SERVER['HTTPS']='on'
+    $_SERVER['HTTPS']='on';
 }
 
 // WordPress view bootstrapper
