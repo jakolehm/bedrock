@@ -10,8 +10,7 @@ Bedrock is a modern WordPress stack that helps you get started with the best dev
 * [Installation/Usage](#installationusage)
   * [via Composer](#using-create-project)
   * [Manually](#manually)
-* [Deploying with Capistrano](#deploying-with-capistrano)
-  * [Steps](#deployment-steps)
+  * [Qt Cloud Services](#deploying-to-qt-cloud-services)
 * [Documentation](#deploying-with-capistrano)
   * [Folder Structure](#folder-structure)
   * [Configuration Files](#configuration-files)
@@ -49,7 +48,6 @@ Note: While this is a project from the guys behind the [Roots starter theme](htt
 
 * Git
 * PHP >= 5.3.2 (for Composer)
-* Ruby >= 1.9 (for Capistrano)
 
 If you aren't interested in using a part, then you don't need its requirements either. Not deploying with Capistrano? Then don't worry about Ruby for example.
 
@@ -105,22 +103,22 @@ Using Capistrano for deploys?
 2. Create `wordpress` database to MySQL
 3. Create MAR instance
 4. Add MAR git remote
-  * git remote add qtc {git remote from console}
+  * `git remote add qtc {git remote from console}``
 5. Set environment variables to MAR (using qtc-cli tool)
-  * DB_NAME=wordpress
-  * DB_USER=admin
-  * DB_PASSWORD={mysql password from console}
-  * DB_HOST={database host}:{database port}
-  * WP_ENV=production
-  * WP_HOME=https://{instance id}.qtcloudapp.com
-  * WP_SITEURL=http://{instance id}.qtcloudapp.com/wp
-  * AUTH_KEY={random token}
-  * SECURE_AUTH_KEY={random token}
-  * LOGGED_IN_KEY={random token}
-  * NONCE_KEY={random token}
-  * AUTH_SALT={random token}
-  * SECURE_AUTH_SALT={random token}
-6. Deploy wordpress
+  * `DB_NAME` - Database name
+  * `DB_USER` - Database user
+  * `DB_PASSWORD` - Database password
+  * `DB_HOST` - Database host:port
+  * `WP_ENV` - Set environment (recommended value `production`)
+  * `WP_HOME`- Full URL to WordPress home (https://mar-eu-1-foobar.qtcloudapp.com)
+  * `WP_SITEURL` - Full URL to WordPress including subdirectory (https://mar-eu-1-foobar.qtcloudapp.com/wp)
+  * `AUTH_KEY` - WP auth key
+  * `SECURE_AUTH_KEY` - WP secure auth key
+  * `LOGGED_IN_KEY` - WP logged in key
+  * `NONCE_KEY` - WP nonce key
+  * `AUTH_SALT` - WP auth salt
+  * `SECURE_AUTH_SALT` - WP secure auth salt
+6. Deploy wordpress to MAR
   * `git push qtc master`
 
 ## Documentation
